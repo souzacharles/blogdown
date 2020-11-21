@@ -5,12 +5,52 @@
     <link>/publication-type/3/</link>
       <atom:link href="/publication-type/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
       <title>3</title>
       <link>/publication-type/3/</link>
     </image>
+    
+    <item>
+      <title>Deflacionando séries temporais</title>
+      <link>/publication/deflatebr/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/deflatebr/</guid>
+      <description>
+&lt;link href=&#34;index_files/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;index_files/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;pacote-deflatebr&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pacote deflateBR&lt;/h2&gt;
+&lt;!--
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+--&gt;
+&lt;p&gt;O pacote &lt;a href=&#34;https://cran.r-project.org/web/packages/deflateBR/index.html&#34;&gt;deflateBR&lt;/a&gt; foi criado por &lt;span class=&#34;citation&#34;&gt;Meireles (&lt;a href=&#34;#ref-Meireles2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt; e obtém séries de índices de preços atualizados da API do &lt;a href=&#34;http://ipeadata.gov.br/Default.aspx&#34;&gt;IPEA&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;carregando-o-pacote&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Carregando o pacote&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(deflateBR)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;referências-bibliográficas&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;Referências Bibliográficas&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-Meireles2018&#34;&gt;
+&lt;p&gt;Meireles, Fernando. 2018. “deflateBR: Deflate Nominal Brazilian Reais.” &lt;em&gt;Rproject&lt;/em&gt;. &lt;a href=&#34;https://cran.r-project.org/web/packages/deflateBR/index.html&#34;&gt;https://cran.r-project.org/web/packages/deflateBR/index.html&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R&#34;&gt;
+&lt;p&gt;R Core Team. 2020. &lt;em&gt;R: A Language and Environment for Statistical Computing&lt;/em&gt;. Vienna, Austria: R Foundation for Statistical Computing. &lt;a href=&#34;http://www.R-project.org/&#34;&gt;http://www.R-project.org/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Em construção</title>

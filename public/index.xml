@@ -94,7 +94,7 @@
   &lt;/div&gt;
 &lt;/div&gt;
 --&gt;
-&lt;p&gt;O pacote &lt;a href=&#34;https://cran.r-project.org/web/packages/deflateBR/index.html&#34;&gt;deflateBR&lt;/a&gt; foi criado por &lt;span class=&#34;citation&#34;&gt;Meireles (&lt;a href=&#34;#ref-Meireles2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt; e obtém séries de índices de preços atualizados da API do &lt;a href=&#34;http://ipeadata.gov.br/Default.aspx&#34;&gt;IPEA&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;O pacote &lt;a href=&#34;https://cran.r-project.org/web/packages/deflateBR/index.html&#34;&gt;deflateBR&lt;/a&gt; foi criado por &lt;span class=&#34;citation&#34;&gt;Meireles (&lt;a href=&#34;#ref-Meireles2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt; e obtém séries de índices de preços atualizados da API do &lt;a href=&#34;http://ipeadata.gov.br/Default.aspx&#34;&gt;Instituto de Pesquisa Econômica Aplicada (IPEA)&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;carregando-o-pacote&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Carregando o pacote&lt;/h2&gt;

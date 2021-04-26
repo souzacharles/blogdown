@@ -259,8 +259,8 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu07acfe0edfa07a39670764eba332f45f_49366_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu07acfe0edfa07a39670764eba332f45f_49366_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="/publication/deflatebr/">
 
@@ -328,7 +328,7 @@
     "name": "Charles Souza",
     "logo": {
       "@type": "ImageObject",
-      "url": "/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
+      "url": "/images/icon_hu07acfe0edfa07a39670764eba332f45f_49366_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum."
@@ -820,10 +820,10 @@
 </div>
 
 
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 449px;">
   <div style="position: relative">
-    <img src="/publication/deflatebr/featured_hu559a5add5185b02575aa8333502ab2cc_220813_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Image credit: <a href="https://unsplash.com/photos/s9CC2SKySJM"><strong>Unsplash</strong></a></span>
+    <img src="/publication/deflatebr/featured_hud821291f92374c2f4dc07ca0e46d45df_176874_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Imagem: <a href="https://charlessouza.com.br"><strong>O autor</strong></a></span>
   </div>
 </div>
 
@@ -881,6 +881,108 @@
 <div id="carregando-o-pacote" class="section level2">
 <h2>Carregando o pacote</h2>
 <pre class="r"><code>library(deflateBR)</code></pre>
+<pre class="r"><code>deflate(nominal_values = 100, nominal_dates = as.Date(&quot;2000-01-01&quot;), 
+        real_date = &quot;01/2019&quot;)</code></pre>
+<pre><code>## 
+## Downloading necessary data from IPEA&#39;s API
+## ...</code></pre>
+<pre><code>## [1] 322.1112</code></pre>
+<p>Por padrão usa o API IPEA.</p>
+<p>Para alterar o índice acresenta-se o argumento <code>index</code>.</p>
+<pre class="r"><code>deflate(nominal_values = 100, nominal_dates = as.Date(&quot;2000-01-01&quot;),
+        real_date = &quot;01/2019&quot;, index = &quot;igpm&quot;)</code></pre>
+<pre><code>## 
+## Downloading necessary data from IPEA&#39;s API
+## ...</code></pre>
+<pre><code>## [1] 397.2442</code></pre>
+<pre class="r"><code>deflate(nominal_values = 100, nominal_dates = as.Date(&quot;2000-01-01&quot;),
+        real_date = &quot;01/2019&quot;,  &quot;inpc&quot;)</code></pre>
+<pre><code>## 
+## Downloading necessary data from IPEA&#39;s API
+## ...</code></pre>
+<pre><code>## [1] 329.537</code></pre>
+</div>
+<div id="deflacionando-series" class="section level2">
+<h2>Deflacionando series</h2>
+<pre class="r"><code>dados &lt;- data.frame(reais = seq(1, 5),
+                    datas = seq.Date(from = as.Date(&quot;2001-01-01&quot;), 
+                                     by = &quot;month&quot;, length.out = 5),stringsAsFactors = FALSE)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">reais</th>
+<th align="left">datas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">2001-01-01</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">2001-02-01</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">2001-03-01</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">2001-04-01</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">2001-05-01</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>deflate(dados$reais, dados$datas, &quot;01/2019&quot;, &quot;ipc&quot;)</code></pre>
+<pre><code>## 
+## Downloading necessary data from IPEA&#39;s API
+## ...</code></pre>
+<pre><code>## [1]  2.967902  5.898014  8.811958 11.683967 14.480809</code></pre>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## v ggplot2 3.3.2     v purrr   0.3.4
+## v tibble  3.0.4     v dplyr   1.0.2
+## v tidyr   1.1.2     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.0</code></pre>
+<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>dados %&gt;%
+  mutate(reais_deflacionados = deflate(reais,
+                                       datas, &quot;01/2019&quot;,&quot;ipca&quot;))</code></pre>
+<pre><code>## 
+## Downloading necessary data from IPEA&#39;s API
+## ...</code></pre>
+<pre><code>##   reais      datas reais_deflacionados
+## 1     1 2001-01-01            3.039514
+## 2     2 2001-02-01            6.044558
+## 3     3 2001-03-01            9.025311
+## 4     4 2001-04-01           11.988215
+## 5     5 2001-05-01           14.898877</code></pre>
+</div>
+<div id="outras-funções" class="section level2">
+<h2>Outras funções</h2>
+<p>Para facilitar o uso de cada um dos cinco índices de preços, também incluí no pacote deflateBR cinco funções auxiliares. Em vez de usar a função <code>deflate</code> com o argumento <code>index = "ipca"</code> para deflacionar pelo IPCA, é possível fazer isso:</p>
+<pre class="r"><code>ipca(dados$reais, dados$datas, &quot;01/2019&quot;)</code></pre>
+<pre><code>## 
+## Downloading necessary data from IPEA&#39;s API
+## ...</code></pre>
+<pre><code>## [1]  3.039514  6.044558  9.025311 11.988215 14.898877</code></pre>
+<pre class="r"><code>igpdi(dados$reais, dados$datas, &quot;01/2019&quot;)</code></pre>
+<pre><code>## 
+## Downloading necessary data from IPEA&#39;s API
+## ...</code></pre>
+<pre><code>## [1]  3.598098  7.161123 10.705435 14.160172 17.502859</code></pre>
+<p>Por fim, o pacote deflateBR também contém uma função simples, chamada <code>inflation</code>, para identificar a variação percentual na inflação entre dois períodos. Se quisermos saber qual foi a taxa de inflação em 2017 segundo o IPCA, por exemplo, basta rodar:</p>
+<pre class="r"><code>inflation(&quot;01/2000&quot;, &quot;01/2019&quot;, &quot;ipca&quot;)</code></pre>
+<pre><code>## 
+## Downloading necessary data from IPEA&#39;s API
+## ...</code></pre>
+<pre><code>## [1] 222.1112</code></pre>
 </div>
 <div id="referências-bibliográficas" class="section level2 unnumbered">
 <h2>Referências Bibliográficas</h2>
@@ -1313,7 +1415,7 @@
     
     
     
-    <script src="/js/wowchemy.min.d9d80f811e95b4b4f6df1eaaf297b05f.js"></script>
+    <script src="/js/wowchemy.min.a30e17c6197f21f7f966f9a6cd022a55.js"></script>
 
     
 

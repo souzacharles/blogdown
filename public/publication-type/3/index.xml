@@ -7,7 +7,7 @@
     <description>3</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu07acfe0edfa07a39670764eba332f45f_49366_512x512_fill_lanczos_center_2.png</url>
       <title>3</title>
       <link>/publication-type/3/</link>
     </image>
@@ -37,6 +37,108 @@
 &lt;div id=&#34;carregando-o-pacote&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Carregando o pacote&lt;/h2&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(deflateBR)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;deflate(nominal_values = 100, nominal_dates = as.Date(&amp;quot;2000-01-01&amp;quot;), 
+        real_date = &amp;quot;01/2019&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Downloading necessary data from IPEA&amp;#39;s API
+## ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 322.1112&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Por padrão usa o API IPEA.&lt;/p&gt;
+&lt;p&gt;Para alterar o índice acresenta-se o argumento &lt;code&gt;index&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;deflate(nominal_values = 100, nominal_dates = as.Date(&amp;quot;2000-01-01&amp;quot;),
+        real_date = &amp;quot;01/2019&amp;quot;, index = &amp;quot;igpm&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Downloading necessary data from IPEA&amp;#39;s API
+## ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 397.2442&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;deflate(nominal_values = 100, nominal_dates = as.Date(&amp;quot;2000-01-01&amp;quot;),
+        real_date = &amp;quot;01/2019&amp;quot;,  &amp;quot;inpc&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Downloading necessary data from IPEA&amp;#39;s API
+## ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 329.537&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;deflacionando-series&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Deflacionando series&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dados &amp;lt;- data.frame(reais = seq(1, 5),
+                    datas = seq.Date(from = as.Date(&amp;quot;2001-01-01&amp;quot;), 
+                                     by = &amp;quot;month&amp;quot;, length.out = 5),stringsAsFactors = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;right&#34;&gt;reais&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;datas&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2001-01-01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2001-02-01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2001-03-01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2001-04-01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2001-05-01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;deflate(dados$reais, dados$datas, &amp;quot;01/2019&amp;quot;, &amp;quot;ipc&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Downloading necessary data from IPEA&amp;#39;s API
+## ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  2.967902  5.898014  8.811958 11.683967 14.480809&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## v ggplot2 3.3.2     v purrr   0.3.4
+## v tibble  3.0.4     v dplyr   1.0.2
+## v tidyr   1.1.2     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dados %&amp;gt;%
+  mutate(reais_deflacionados = deflate(reais,
+                                       datas, &amp;quot;01/2019&amp;quot;,&amp;quot;ipca&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Downloading necessary data from IPEA&amp;#39;s API
+## ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   reais      datas reais_deflacionados
+## 1     1 2001-01-01            3.039514
+## 2     2 2001-02-01            6.044558
+## 3     3 2001-03-01            9.025311
+## 4     4 2001-04-01           11.988215
+## 5     5 2001-05-01           14.898877&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outras-funções&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Outras funções&lt;/h2&gt;
+&lt;p&gt;Para facilitar o uso de cada um dos cinco índices de preços, também incluí no pacote deflateBR cinco funções auxiliares. Em vez de usar a função &lt;code&gt;deflate&lt;/code&gt; com o argumento &lt;code&gt;index = &#34;ipca&#34;&lt;/code&gt; para deflacionar pelo IPCA, é possível fazer isso:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ipca(dados$reais, dados$datas, &amp;quot;01/2019&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Downloading necessary data from IPEA&amp;#39;s API
+## ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  3.039514  6.044558  9.025311 11.988215 14.898877&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;igpdi(dados$reais, dados$datas, &amp;quot;01/2019&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Downloading necessary data from IPEA&amp;#39;s API
+## ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  3.598098  7.161123 10.705435 14.160172 17.502859&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Por fim, o pacote deflateBR também contém uma função simples, chamada &lt;code&gt;inflation&lt;/code&gt;, para identificar a variação percentual na inflação entre dois períodos. Se quisermos saber qual foi a taxa de inflação em 2017 segundo o IPCA, por exemplo, basta rodar:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;inflation(&amp;quot;01/2000&amp;quot;, &amp;quot;01/2019&amp;quot;, &amp;quot;ipca&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Downloading necessary data from IPEA&amp;#39;s API
+## ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 222.1112&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;referências-bibliográficas&#34; class=&#34;section level2 unnumbered&#34;&gt;
 &lt;h2&gt;Referências Bibliográficas&lt;/h2&gt;
